@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    
+    <link rel="stylesheet" href="/src/client/assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Vestibulum luctus</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla rutrum mattis. Nullam nec nisi
+                    non neque semper tincidunt. Etiam condimentum quam et ornare semper. Quisque facilisis pellentesque
+                    lacus, nec facilisis est auctor nec. Pellentesque vitae aliquam ipsum. Sed malesuada a purus at suscipit.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8" ng-controller="FruitController as vm">
+                <h2>Favourite Fruit</h2>
+                <ul class="list-group ng-cloak" >
+                    <li class="list-group-item" ng-repeat="item in vm.fruit">
+                        {{item}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <!-- endbower -->
+    
+    
+    <script src="/src/client/app/app-module.js"></script>
+    <script src="/src/client/app/fruit//fruit-module.js"></script>
+    <script src="/src/client/app/fruit//fruit.js"></script>
+   
+    
+</body>
+</html>

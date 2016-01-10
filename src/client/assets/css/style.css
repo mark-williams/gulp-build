@@ -1,0 +1,6 @@
+/*Required for operation of ng-cloak directive (alternative is to
+load angular in <head> section).*/
+
+.ng-cloak {
+    display: none !important;
+ }
