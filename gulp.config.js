@@ -2,6 +2,7 @@ module.exports = function() {
     var client = './src/client/';
     var clientApp = client + 'app/';
     var server = './src/server/';
+    var assets = client + 'assets/';
     var temp = './.tmp/';
     
     var config = {
@@ -17,7 +18,7 @@ module.exports = function() {
             clientApp + '**/*.js',       
             '!' +  clientApp + '**/*.spec.js',       
         ],
-        css: temp + '*.css',
+        css: assets + 'css/*.css',
         less: client + 'styles/styles.less',
         fonts: './bower_components/font-awesome/fonts/**/*.*',
         images: client + 'images/**/*.*',
