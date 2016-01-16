@@ -4,4 +4,5 @@ Initially this is a *very* simple angular application, however to experiment wit
 
 Will eventually look to creates separate build tasks to minify etc. and place in a dedicated build folder. 
 
-Now uses gulp-usref to combine multiple assets files into one file. This is driven by comment tags in the html and is used here to keep external libraries apart from the 'application' files.  
+###16 January 2016
+Now uses gulp-useref to combine multiple assets files into one file. This is driven by comment tags in the html and is used here to keep external libraries apart from the 'application' files.  
