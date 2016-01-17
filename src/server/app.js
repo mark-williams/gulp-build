@@ -9,10 +9,10 @@ var app = express();
 // var errorHandler = require('./routes/utils/errorHandler')();
 // var favicon = require('serve-favicon');
 // var logger = require('morgan');
-var port = process.env.PORT || 7200;
-var routes;
 
-var environment = process.env.NODE_ENV;
+var port = process.env.PORT || 7200;
+var environment = process.env.NODE_ENV || 'development';
+
 
 // app.use(bodyParser.urlencoded({extended: true}));
 // app.use(bodyParser.json());
@@ -23,9 +23,9 @@ var environment = process.env.NODE_ENV;
 // app.use(errorHandler.init);
 
 //routes = require('./routes/index')(app);
-//var port = 1963;
 
-console.log('About to crank up node');
+
+console.log('Starting node...');
 console.log('PORT=' + port);
 console.log('NODE_ENV=' + environment);
 
@@ -36,6 +36,22 @@ app.get('/ping', function(req, res, next) {
     res.send('pong');
 });
 
+
+
+
+switch (environment){
+    case 'production':
+        console.log('** BUILD **');
+        console.log('serving from ' + './build/');
+        app.use('/', express.static('./build/'));
+        break;
+    default:
+        console.log('** DEV **');
+        console.log('serving from ' + './src/client/ and ./');
+        app.use('/', express.static('./src/client/'));
+        app.use('/', express.static('./'));
+        break;
+}
 
 console.log('serving from ' + './src/client/ and ./');
 app.use('/', express.static('./src/client/'));
