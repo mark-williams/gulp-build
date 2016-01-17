@@ -12,7 +12,7 @@ var app = express();
 var port = process.env.PORT || 7200;
 var routes;
 
-//var environment = process.env.NODE_ENV;
+var environment = process.env.NODE_ENV;
 
 // app.use(bodyParser.urlencoded({extended: true}));
 // app.use(bodyParser.json());
@@ -27,7 +27,7 @@ var routes;
 
 console.log('About to crank up node');
 console.log('PORT=' + port);
-//console.log('NODE_ENV=' + environment);
+console.log('NODE_ENV=' + environment);
 
 var source = '';
 
